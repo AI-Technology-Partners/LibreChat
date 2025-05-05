@@ -35,7 +35,7 @@ mongodb:
   command: mongod --noauth
 ```
 
-## Modify .env file to apply the settings for the application running locally
+## Modify .env file to run locally
 
 1. The Mongo URI
 
