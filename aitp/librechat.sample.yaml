@@ -1,0 +1,39 @@
+# Configuration version (required)
+version: 1.2.1
+
+# Custom interface configuration
+interface:
+  customWelcome: 'Welcome to EnterpriseGPT'
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  agents: true
+
+# Registration configuration
+registration:
+  socialLogins: ['github', 'google', 'openid']
+
+# Action domains allowed
+actions:
+  allowedDomains:
+    - 'librechat.ai'
+    - 'google.com'
+# Endpoints
+endpoints:
+  azureOpenAI:
+    titleModel: 'gpt-4o'
+    summarize: true
+    summaryModel: 'gpt-4o'
+    groups:
+      - group: 'rg-maisy-test-eus2'
+        apiKey: ''
+        version: '2024-12-01-preview'
+        instanceName: 'aoai-maisy-test-eus2'
+        deploymentName: 'gpt-4o'
+        models:
+          gpt-4o: true
