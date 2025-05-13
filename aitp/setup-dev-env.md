@@ -9,6 +9,12 @@
 
 3. https://www.mongodb.com/products/tools/compass
 
+## Understand configuration files
+
+1. librechat.yaml - Used for custom endpoints configuration and other application settings
+2. .env file - Used for server configuration, pre-configured endpoint API keys, and authentication settings
+3. docker-compose.override.yml - Used for Docker-specific configurations and mounting volumes
+
 ## Run application & connect to the MongoDB in Docker
 
 - The HOST_PORT:CONTAINER_PORT

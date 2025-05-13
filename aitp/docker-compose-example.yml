@@ -64,17 +64,24 @@ services:
     container_name: rag_api
     image: ghcr.io/danny-avila/librechat-rag-api-dev:latest
     environment:
-      - DB_HOST=vectordb
+      - VECTOR_DB_TYPE=atlas-mongo
+      - ATLAS_MONGO_DB_URI=mongodb+srv://aitp-lc-admin:pass@mongo-lc-test-eus2.dpvbj0k.mongodb.net/main?retryWrites=true&w=majority&appName=mongo-lc-test-eus2
+      - ATLAS_SEARCH_INDEX=vectors
+      - RAG_AZURE_OPENAI_API_VERSION=2024-12-01-preview
+      - RAG_AZURE_OPENAI_ENDPOINT=https://aoai-maisy-test-eus2.openai.azure.com
+      - RAG_AZURE_OPENAI_API_KEY=
+      - EMBEDDINGS_PROVIDER=azure
+      - EMBEDDINGS_MODEL=text-embedding-3-large
+      - DEBUG_RAG_API=true
       - RAG_PORT=${RAG_PORT:-8000}
     expose:
       - 8000
     ports:
       - 8000:8000
     restart: always
-    depends_on:
-      - vectordb
+    # depends_on:
+    #   - vectordb
     env_file:
       - .env
-
 volumes:
   pgdata2:
